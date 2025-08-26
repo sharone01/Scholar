@@ -1,0 +1,140 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Filtering</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    filter-buttons button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+   .filter-buttons button.active {
+      background: #712cf9;
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .course {
+      width: 250px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-align: center;
+      display: none; 
+    }
+
+    .course img {
+      width: 100%;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Latest Courses</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="active" onclick="filterCourses('all')">Show All</button>
+    <button onclick="filterCourses('webdesign')">Webdesign</button>
+    <button onclick="filterCourses('development')">Development</button>
+    <button onclick="filterCourses('wordpress')">WordPress</button>
+  </div>
+
+  <!-- Courses -->
+  <div class="courses">
+    <div class="course development">
+      <img src="./photo/IMG-20250821-WA0152.jpg" alt="Web Development">
+      <p>Cindy Walker</p>
+      <h4>Web Development Tips</h4>
+      <p>$340</p>
+    </div>
+
+    <div class="course development">
+      <img src="./photo/IMG-20250821-WA0154.jpg" alt="Online Learning">
+      <p>Stella Blair</p>
+      <h4>Online Learning Steps</h4>
+      <p>$450</p>
+    </div>
+
+    <div class="course wordpress">
+      <img src="./photo/IMG-20250821-WA0153.jpg" alt="WordPress">
+      <p>David Hutson</p>
+      <h4>Latest Web Trends</h4>
+      <p>$640</p>
+    </div>
+
+     <div class="course wordpress">
+      <img src="./photo/IMG-20250821-WA0155.jpg" alt="WordPress">
+      <p>Sophia Rose</p>
+      <h4>Be a WordPress Master</h4>
+      <p>$320</p>
+    </div>
+
+    <div class="course webdesign">
+      <img src="./photo/IMG-20250821-WA0151.jpg" alt="Web Design">
+      <p>Stella Blair</p>
+      <h4>Learn Web Design</h4>
+      <p>$160</p>
+    </div>
+
+    <div class="course webdesign">
+      <img src="./photo/IMG-20250821-WA0156.jpg" alt="Web Design">
+      <p>David Hutson</p>
+      <h4>Full Stack Developer</h4>
+      <p>$240</p>
+    </div>
+  </div>
+
+  <script>
+    // Filtering Function
+    function filterCourses(category) {
+      let courses = document.querySelectorAll(".course");
+      let buttons = document.querySelectorAll(".filter-buttons button");
+
+      // Reset active button
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      // Highlight clicked button
+      event.target.classList.add("active");
+
+      courses.forEach(course => {
+        if (category === "all" || course.classList.contains(category)) {
+          course.style.display = "block";
+        } else {
+          course.style.display = "none";
+        }
+      });
+    }
+
+    // Show all on load
+    filterCourses("all");
+  </script>
+
+</body>
+</html>
+

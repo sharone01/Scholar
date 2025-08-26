@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <style>
+/*navbar*/
+.navbar{
+    background: #712cf9;
+
+}
+.container-fluid{
+    background: #712cf9;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 5px ;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px ;
+  
+}
+
+.search-box button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+         /* first bg*/
+    .hero {
+      background: url('./photo/IMG-20250821-WA0145.jpg') center/cover no-repeat; 
+      height: 100vh; 
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      
+    }
+
+    /* Smaller 2nd */
+    .hero-card {
+      background: url('./photo/IMG-20250821-WA0146.jpg') center/cover no-repeat; 
+      width: 800px;
+      padding: 60px 40px;
+      border-radius: 15px;
+      color: white;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      position: absolute;
+      margin-right: 80px;
+    }
+
+    .hero-card h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .btn1{
+        color: white;
+        background: #712cf9;
+    }
+
+    .btn:hover {
+      background:#712cf9;
+      color: white;
+    }
+
+    .btn {
+      background: white;
+      color: #712cf9;
+      border: 1px solid #fff;
+    }
+/*services */
+.btn-serv{
+    color: #712cf9;
+    border-radius: 5px;
+    border: 0.1px solid white;
+    padding: 4px;
+}
+.btn-serv:hover{
+    background-color: #712cf9;
+    color: white;
+}
+.services-container {
+  display: flex;              
+  justify-content: space-between; 
+  gap: 20px;                  
+  padding: 40px;
+}
+
+.service-card {
+  flex: 1;                   
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+}
+.service-card .tag{
+        padding: 3px;
+        border: 2px ;
+        border-radius: 5px;
+        width: 40px;
+        font-size: 14px;
+        display:flex;
+        justify-content: space-between;
+
+        }
+.service-card .circle{
+           width: 50px;
+           height: 50px;
+           background: #4a62f7;
+           color: #4a62f7;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 20px;
+           position: absolute;
+           top: -5px;
+           right: -5px;
+        }
+/*FAQ/ABOUT US*/
+ .accordion {
+  background: #712cf9;   
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;         
+  margin: auto;
+}
+
+.accordion-item {
+  background: #fff;
+  margin: 15px 0;
+  border-radius: 30px;
+  padding: 15px 20px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+.circle {
+  width: 30px;
+  height: 30px;
+  background:#712cf9 ;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+/* Hidden by default */
+.accordion-content {
+  display: none;
+  margin-top: 10px;
+  color: #444;
+}
+
+/*  active */
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.accordion-item.active .circle {
+  transform: rotate(45deg); 
+}
+/*about us*/
+.ABTUS{
+  background-color: whitesmoke;
+}
+.ABTUS button{
+  background:white;
+  color: #712cf9;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid #712cf9;
+}
+.ABTUS p{
+  color: #712cf9;
+}
+/* courses*/
+.option p{
+    color: #712cf9;
+}
+ .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+   .filter-buttons button.active {
+      background: #712cf9;
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .course {
+      width: 250px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-align: center;
+      display: none; 
+    }
+
+    .course img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .container{
+        background: #712cf9;
+        border-radius: 10px;
+        margin-left: 0%;
+        justify-items: flex-end;
+        justify-content: space-between;
+
+    }
+    </style>
+
+</head>
+<body>
+    <!--navigation-->
+    <div>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark  position-sticky-top show">
+        <div class="container-fluid ms-auto">
+            <a class="navbar-brand text-white ms-4" href="#"><h3>SCHOLAR</h3></a>
+            <span class="text-white"><h3>|</h3></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+         <!-- Search bar -->
+    <form class="d-flex">
+      <input class="form-control ms-2" type="search" placeholder="Type Something">
+      <button class="btn btn-light" type="submit">🔍</button>
+    </form>
+        <!--right nav--> 
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto ">
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-center text-white" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#service">Services</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="./courses.html" data-bs-toggle=""> Courses </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#"> Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#"> Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="" > Register Now!</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+<!--home-->
+  <section class="hero" id="Home">
+    
+    <!-- Small background with text + buttons -->
+    <div class="hero-card">
+    <a href="#" class="btn btn1">Our Courses</a><br><br>
+      <h1>With Scholar Teachers,<br>Everything Is Easier</h1>
+      <p>Scholar is a free CSS template designed for educational websites. 
+         This layout is based on the Bootstrap 5 framework.</p>
+      
+      <a href="#" class="btn ">Request Demo</a>
+      <a href="#" class="btn ">What's Scholar?</a>
+    </div>
+  </section><br><br><br>
+
+
+  <!---services-->
+   <section class="services" id="service">
+  <div class="services-container">
+    <div class="service-card">
+      <h3>Online Degrees</h3>
+      <p>Whenever you need free templates in HTML CSS...</p>
+      <button class="btn-serv">Read More</button>
+      <div class="tag">
+        <img class="circle" src="./photo/IMG-20250821-WA0164.jpg">
+    </div>
+    </div>
+
+    <div class="service-card">
+      <h3>Short Courses</h3>
+      <p>You can browse free templates based on different tags...</p>
+      <button class="btn-serv">Read More</button>
+    <div class="tag">
+        <img class="circle" src=".//photo/IMG-20250821-WA0165.jpg">
+    </div>
+    </div>
+    <div class="service-card">
+      <h3>Web Experts</h3>
+      <p>You can start learning HTML, CSS by modifying templates...</p>
+      <button class="btn-serv">Read More</button>
+      <div class="tag">
+        <img class="circle" src="./photo/IMG-20250821-WA0166.jpg">
+    </div>
+    </div>
+  </div>
+</section>
+<!--about us-->
+<section>
+      <div class=" d-flex " >
+    <div class="accordion col-6 w-50">
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <h4>Where shall we begin?</h4>
+      <span class="circle">+</span>
+    </div>
+    <div class="accordion-content">
+      <p>
+        Dolor <b>almesit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <h4>How do we work together?</h4>
+      <span class="circle">+</span>
+    </div>
+    <div class="accordion-content">
+      <p>Hi I'm Sneh. i am a web developer. i study JavaScript. I love Cats...</p>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <h4>Why Scholar is the Best</h4>
+      <span class="circle">+</span>
+    </div>
+    <div class="accordion-content">
+      <p>Hi I'm Sneh. i am a web developer. i study JavaScript. I love Cats...</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      <h4>Do we get the best support</h4>
+      <span class="circle">+</span>
+    </div>
+    <div class="accordion-content">
+      <p>Hi I'm Sneh. i am a web developer. i study JavaScript. I love Cats...</p>
+    </div>
+  </div>
+
+</div>
+
+<!--js for FAQS -->
+<script>
+  const items = document.querySelectorAll(".accordion-item");
+
+items.forEach(item => {
+  item.querySelector(".accordion-header").addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+ <div class=" ABTUS w-50 col-6 align-items-center justify-content-center btn-light p-5">
+    <p class="text-indigo">ABOUT US</p>
+    <h3>What Makes Us The Best<br> Academy Online?</h3>
+    <p class="text-dark">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.<br><br><br>
+
+        <button> Discover More</button>
+    </p>
+    </div>
+ </div>    
+</section><br><br><br>
+
+<div class="text-dark container d-flex">
+    <div class="happy">
+        <h3>150+</h3>
+        <p>Happy Students</p>
+    </div>
+    <div class="happy">
+        <h3>804+</h3>
+        <p>Course Hours</p>
+    </div>
+    <div class="happy">
+        <h3>50+</h3>
+        <p>Employed Students</p>
+    </div>
+    <div class="happy">
+        <h3>15+</h3>
+        <p> Years Experience</p>
+    </div>
+</div><br><br>
+ <!--option bar-->
+<section class="course" id="crs">
+    <div class="option"> 
+    <p class="text-center">LATEST COURSES</p>
+    <h4 class="text-dark text-center">Latest Courses</h4><br>
+   
+</div>
+    <!-- Filter Buttons -->
+<div class="filter-buttons">
+    <button class="active" onclick="filterCourses('all')">Show All</button>
+    <button onclick="filterCourses('webdesign')">Webdesign</button>
+    <button onclick="filterCourses('development')">Development</button>
+    <button onclick="filterCourses('wordpress')">WordPress</button>
+  </div>
+
+  <!-- Courses -->
+  <div class="courses">
+    <div class="course development">
+      <img src="./photo/IMG-20250821-WA0152.jpg" alt="Web Development">
+      <p>Cindy Walker</p>
+      <h4>Web Development Tips</h4>
+      <p>$340</p>
+    </div>
+
+    <div class="course development">
+      <img src="./photo/IMG-20250821-WA0154.jpg" alt="Online Learning">
+      <p>Stella Blair</p>
+      <h4>Online Learning Steps</h4>
+      <p>$450</p>
+    </div>
+
+    <div class="course wordpress">
+      <img src="./photo/IMG-20250821-WA0153.jpg" alt="WordPress">
+      <p>David Hutson</p>
+      <h4>Latest Web Trends</h4>
+      <p>$640</p>
+    </div>
+
+     <div class="course wordpress">
+      <img src="./photo/IMG-20250821-WA0155.jpg" alt="WordPress">
+      <p>Sophia Rose</p>
+      <h4>Be a WordPress Master</h4>
+      <p>$320</p>
+    </div>
+
+    <div class="course webdesign">
+      <img src="./photo/IMG-20250821-WA0151.jpg" alt="Web Design">
+      <p>Stella Blair</p>
+      <h4>Learn Web Design</h4>
+      <p>$160</p>
+    </div>
+
+    <div class="course webdesign">
+      <img src="./photo/IMG-20250821-WA0156.jpg" alt="Web Design">
+      <p>David Hutson</p>
+      <h4>Full Stack Developer</h4>
+      <p>$240</p>
+    </div>
+  </div>
+
+  <script>
+   // Filtering Function
+    function filterCourses(category) {
+      let courses = document.querySelectorAll(".course");
+      let buttons = document.querySelectorAll(".filter-buttons button");
+
+      
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+    
+      event.target.classList.add("active");
+
+      courses.forEach(course => {
+        if (category === "all" || course.classList.contains(category)) {
+          course.style.display = "block";
+        } else {
+          course.style.display = "none";
+        }
+      });
+    }
+
+    
+    filterCourses("all");
+  </script>
+
+</section>
+
+
+</body>
+</html>
